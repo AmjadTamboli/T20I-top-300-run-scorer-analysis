@@ -29,9 +29,23 @@ SWITCH(
     BLANK()
 )
 
+// Set as Project Titals."Dynamic"
 
 
-
+Project Tital = 
+VAR playername = HASONEVALUE(Top_300_T20I_Player[Player Name])
+VAR countryname = HASONEVALUE(Top_300_T20I_Player[Country])
+var multiplayer = ISFILTERED(Top_300_T20I_Player[Player Name])
+VAR multicountry = ISFILTERED(Top_300_T20I_Player[Country])
+VAR playernamevalue = SELECTEDVALUE(Top_300_T20I_Player[Player Name])
+VAR countrynamevalue =  SELECTEDVALUE(Top_300_T20I_Player[Country])
+RETURN
+SWITCH(TRUE(),
+playername,"T20I Player Performance " & playernamevalue,
+countryname,"T20I Players Performance Team " & countrynamevalue,
+multiplayer,"T20I Player Performance",
+multicountry,"T20I Team Performance",
+"T20I Top 300 Runs Scorer Performance") 
 
 
 
