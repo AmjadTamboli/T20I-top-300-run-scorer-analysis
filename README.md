@@ -1,2 +1,18 @@
-# T20I-top-300-run-scorer-analysis
-I have a created Top 300 international run scorer analysis in a Power BI. To help of Excel, Power Query and Power BI tools. 
+I have a create International T20 Top scorer like Rohit Sharma , Babar Azam, Virat Kohali, M.S. Dhoni etc. Score analysis.
+In this report i have use a tools Power BI, Power Query and Excel, VBA.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
