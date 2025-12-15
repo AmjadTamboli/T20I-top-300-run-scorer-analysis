@@ -1,3 +1,124 @@
+// Ranking or total player title setup "Dynamic"
+
+_Title Setup = 
+VAR Ranking = HASONEFILTER(Top_300_T20I_Player[Player Name])
+VAR Totalplayer = DISTINCTCOUNT('Top_300_T20I_Player'[Player Name])
+VAR Country = ISFILTERED(Top_300_T20I_Player[Country])
+RETURN 
+SWITCH(TRUE(),
+Ranking,"Rank",
+Country || Totalplayer > 1 ,"Total Player"
+,Totalplayer = 0 ,""
+,"")
+
+
+// Value of rank or Total count player"Dynamic"
+
+_Total Value = 
+VAR HasOnePlayer = HASONEVALUE(Top_300_T20I_Player[Player Name])
+VAR PlayerRank = SELECTEDVALUE(Top_300_T20I_Player[Player Rank])
+VAR SelectedPlayersCount = DISTINCTCOUNT(Top_300_T20I_Player[Player Name])
+VAR IsCountrySelected = ISFILTERED(Top_300_T20I_Player[Country])
+VAR isplayerfilter = ISFILTERED(Top_300_T20I_Player[Player Name])
+RETURN
+SWITCH(
+    TRUE(),
+    NOT isplayerfilter && NOT IsCountrySelected, 0,                      
+    HasOnePlayer, PlayerRank,                                              
+    IsCountrySelected || SelectedPlayersCount > 1, SelectedPlayersCount,   
+    BLANK()
+)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
